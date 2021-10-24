@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+
+$colors: (
+  primary: #9356dc,
+  secondary: #ff79da,
+  tertiary: #99e2d0,
+  darkG1: #7e7e7e,
+  darkG2: rgb(36, 36, 36),
+  lightG: #f6f6f6,
+  standardG: #eaeaea,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body {
+  font-family: "Roboto";
+  margin: 0;
+}
+
+header {
+  font-family: "Shrikhand";
+  text-align: center;
+  position: relative;
+
+  h1 {
+    margin: 1vh 0;
+  }
+
+  .back-button {
+    position: absolute;
+    top: 35%;
+    left: 30px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+.bg-img-restaurant {
+  height: 36vh;
+  width: 100%;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.detail-menu {
+  margin-top: -32px;
+
+  .container {
+    position: relative;
+    padding: 32px 16px;
+    background-color: color(lightG);
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+
+    .heart-logo,
+    .heart-logo-hover {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      font-size: x-large;
+      color: black;
+    }
+
+    .heart-logo {
+      color: black;
+    }
+
+    .heart-logo-hover {
+      color: color(primary);
+      opacity: 0;
+      transition: 500ms ease-in-out;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    h2 {
+      // width: 90vw;
+      margin: 0 auto;
+      font-family: "Shrikhand";
+      letter-spacing: 1px;
+    }
+
+    .menu-segment {
+      .menu-segment-title {
+        text-transform: uppercase;
+        margin-top: 2em;
+        margin-bottom: 0.2em;
+      }
+
+      .divider-type-1 {
+        height: 4px;
+        width: 50px;
+        background-color: color(tertiary);
+      }
+
+      .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .menu-item {
+          width: 100%;
+          height: 10vh;
+          border-radius: 8px;
+          background-color: white;
+          margin: 2vh auto;
+          display: flex;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          overflow: hidden;
+
+          .menu-item-block-text {
+            width: 90%;
+            display: inline-block;
+            transition: 500ms ease-in-out;
+
+            p,
+            h4 {
+              margin: 0.5em;
+              white-space: nowrap;
+              width: 70%;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            h4 {
+              font-size: larger;
+            }
+          }
+
+          .menu-item-block-price {
+            width: 10%;
+            height: 100%;
+            // background-color: rgb(192, 192, 129);
+            // display: flex;
+            // align-items: flex-end;
+          }
+
+          .menu-item-block-tick {
+            width: 20%;
+            height: 100%;
+            color: white;
+            font-size: larger;
+            background-color: color(tertiary);
+            margin-right: -500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &:active {
+            .menu-item-block-text {
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
+
+    .order-button {
+      width: 50vw;
+      padding: 2vh;
+      margin: 4vh auto;
+      border-radius: 30px;
+      background: rgb(255, 121, 218);
+      background: linear-gradient(
+        170deg,
+        rgba(255, 121, 218, 1) 11%,
+        rgba(147, 86, 220, 0.9192051820728291) 63%
+      );
+
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  background-color: color(darkG2);
+  padding: 16px;
+  color: white;
+
+  h3 {
+    font-family: "Shrikhand";
+    font-weight: lighter;
+  }
+
+  .cutlery {
+    font-size: smaller;
+    margin-right: 16px;
+  }
+
+  .handshake {
+    font-size: smaller;
+    margin-right: 10px;
+  }
+
+  .contact-link {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
