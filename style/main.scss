@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+
+$colors: (
+  primary: #9356dc,
+  secondary: #ff79da,
+  tertiary: #99e2d0,
+  darkG1: #7e7e7e,
+  darkG2: rgb(36, 36, 36),
+  lightG: #f6f6f6,
+  standardG: #eaeaea,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body {
+  font-family: "Roboto";
+  margin: 0;
+}
+
+header {
+  font-family: "Shrikhand";
+  text-align: center;
+
+  h1 {
+    margin: 1vh 0;
+  }
+}
+
+.localisation-section {
+  background-color: map-get($colors, standardG);
+  padding: 2vh;
+  text-align: center;
+
+  .form-icon {
+    margin-right: 10px;
+    margin-left: 30px;
+  }
+
+  input {
+    font-family: "Roboto";
+    background-color: transparent;
+    border: none;
+    color: map-get($colors, darkG2);
+    font-weight: bold;
+    font-size: medium;
+  }
+}
+
+.explore-restaurants-section {
+  height: 35vh;
+  padding: 5vh 2vh;
+  background-color: color(lightG);
+  text-align: center;
+
+  .explore-button {
+    width: 50vw;
+    background: rgb(255, 121, 218);
+    background: linear-gradient(
+      170deg,
+      rgba(255, 121, 218, 1) 11%,
+      rgba(147, 86, 220, 0.9192051820728291) 63%
+    );
+    padding: 2vh;
+    border-radius: 30px;
+    color: #fff;
+    margin: 4vh auto;
+  }
+}
+
+.how-to-section {
+  padding-top: 3vh;
+  padding-bottom: 4vh;
+
+  h2 {
+    width: 90vw;
+    margin: 16px auto;
+  }
+
+  .how-to-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .how-to-button {
+      width: 80vw;
+      height: 60px;
+      padding: 8px 6px;
+      border-radius: 20px;
+      background-color: color(lightG);
+      margin: 8px;
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .how-to-button-wrapper {
+        position: absolute;
+        top: 40%;
+        left: -10px;
+
+        .how-to-number {
+          width: 10px;
+          height: 10px;
+          border: solid color(primary) 1px;
+          border-radius: 50%;
+          background-color: color(primary);
+          padding: 4px 8px;
+          color: white;
+        }
+
+        .how-to-logo {
+          margin: auto 20px;
+          color: color(darkG1);
+        }
+
+        .how-to-text {
+          font-weight: bold;
+        }
+      }
+
+      &:hover {
+        // background-color: rgba(147, 86, 220, 0.1);
+        background-color: lighten(color(primary), 35%);
+
+        .how-to-logo {
+          color: color(primary);
+        }
+      }
+    }
+  }
+}
+
+.restaurants-listing-section {
+  background-color: color(lightG);
+  padding: 5vh 2vh 8vh 2vh;
+
+  h2 {
+    width: 90vw;
+    margin: 16px auto;
+  }
+
+  .restaurant-card {
+    width: 90vw;
+    height: 40vh;
+    background-color: white;
+    border-radius: 16px;
+    margin: 24px auto;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    a {
+      text-decoration: none;
+      color: black;
+
+      .restaurant-card-image {
+        height: 70%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          width: 100%;
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          object-fit: cover;
+        }
+      }
+
+      h3,
+      p {
+        margin: 8px;
+      }
+
+      .restaurant-card-text {
+        position: relative;
+
+        .heart-logo,
+        .heart-logo-hover {
+          position: absolute;
+          top: 30%;
+          right: 16px;
+          font-size: x-large;
+          color: black;
+        }
+
+        .heart-logo {
+          color: black;
+        }
+
+        .heart-logo-hover {
+          color: color(primary);
+          color: rgb(255, 121, 218);
+          color: linear-gradient(
+            170deg,
+            rgba(255, 121, 218, 1) 11%,
+            rgba(147, 86, 220, 0.9192051820728291) 63%
+          );
+          opacity: 0;
+          transition: 500ms ease-in-out;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: color(darkG2);
+  padding: 16px;
+  color: white;
+
+  h3 {
+    font-family: "Shrikhand";
+    font-weight: lighter;
+  }
+
+  .cutlery {
+    font-size: smaller;
+    margin-right: 16px;
+  }
+
+  .handshake {
+    font-size: smaller;
+    margin-right: 10px;
+  }
+
+  .contact-link {
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
