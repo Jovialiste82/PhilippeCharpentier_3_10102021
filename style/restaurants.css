@@ -55,7 +55,6 @@ header .back-button a {
   top: 32px;
   right: 32px;
   font-size: x-large;
-  color: black;
 }
 
 .detail-menu .container .heart-logo {
@@ -63,14 +62,20 @@ header .back-button a {
 }
 
 .detail-menu .container .heart-logo-hover {
-  color: #9356dc;
   opacity: 0;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, color-stop(40%, white), color-stop(50%, #ff79da), color-stop(90%, #9356dc));
+  background: linear-gradient(to right, white 40%, #ff79da 50%, #9356dc 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 300%;
   -webkit-transition: 500ms ease-in-out;
   transition: 500ms ease-in-out;
 }
 
 .detail-menu .container .heart-logo-hover:hover {
   opacity: 1;
+  background-position: right;
 }
 
 .detail-menu .container h2 {

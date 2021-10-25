@@ -67,7 +67,6 @@ header {
       top: 32px;
       right: 32px;
       font-size: x-large;
-      color: black;
     }
 
     .heart-logo {
@@ -75,12 +74,22 @@ header {
     }
 
     .heart-logo-hover {
-      color: color(primary);
       opacity: 0;
+      color: transparent;
+      background: linear-gradient(
+        to right,
+        white 40%,
+        color(secondary) 50%,
+        color(primary) 90%
+      );
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-size: 300%;
       transition: 500ms ease-in-out;
 
       &:hover {
         opacity: 1;
+        background-position: right;
       }
     }
 
