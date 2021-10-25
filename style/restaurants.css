@@ -145,6 +145,13 @@ header .back-button a {
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-price {
   width: 10%;
   height: 100%;
+  position: relative;
+}
+
+.detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-price .menu-item-price {
+  position: absolute;
+  bottom: 1em;
+  font-weight: 600;
 }
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-tick {
@@ -165,8 +172,31 @@ header .back-button a {
           justify-content: center;
 }
 
-.detail-menu .container .menu-segment .cards-wrapper .menu-item:active .menu-item-block-text {
+.detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-tick .fa-check-circle {
+  font-size: 2rem;
+}
+
+@-webkit-keyframes fullrotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes fullrotate {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.detail-menu .container .menu-segment .cards-wrapper .menu-item:hover .menu-item-block-text {
   width: 70%;
+}
+
+.detail-menu .container .menu-segment .cards-wrapper .menu-item:hover .fa-check-circle {
+  -webkit-animation: fullrotate 800ms forwards;
+          animation: fullrotate 800ms forwards;
 }
 
 .detail-menu .container .order-button {

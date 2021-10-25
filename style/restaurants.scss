@@ -151,9 +151,13 @@ header {
           .menu-item-block-price {
             width: 10%;
             height: 100%;
-            // background-color: rgb(192, 192, 129);
-            // display: flex;
-            // align-items: flex-end;
+            position: relative;
+
+            .menu-item-price {
+              position: absolute;
+              bottom: 1em;
+              font-weight: 600;
+            }
           }
 
           .menu-item-block-tick {
@@ -166,11 +170,24 @@ header {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            .fa-check-circle {
+              font-size: 2rem;
+              @keyframes fullrotate {
+                to {
+                  transform: rotate(360deg);
+                }
+              }
+            }
           }
 
-          &:active {
+          &:hover {
             .menu-item-block-text {
               width: 70%;
+            }
+
+            .fa-check-circle {
+              animation: fullrotate 800ms forwards;
             }
           }
         }
