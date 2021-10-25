@@ -212,6 +212,35 @@ header {
   }
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadingIn 1s ease-in-out forwards;
+
+  @keyframes fadingIn {
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+}
+
+.fi1 {
+  animation-delay: 0.2s;
+}
+
+.fi2 {
+  animation-delay: 0.4s;
+}
+
+.fi3 {
+  animation-delay: 0.6s;
+}
+
+.fi4 {
+  animation-delay: 0.8s;
+}
+
 footer {
   background-color: color(darkG2);
   padding: 16px;
