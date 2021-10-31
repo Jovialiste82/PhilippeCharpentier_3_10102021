@@ -105,8 +105,8 @@ header {
 }
 
 .explore-restaurants-section {
-  height: 35vh;
-  padding: 5vh 2vh;
+  height: 16rem;
+  padding: 1rem;
   background-color: color(lightG);
   text-align: center;
 
@@ -122,6 +122,7 @@ header {
     border-radius: 30px;
     color: #fff;
     margin: 4vh auto;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -191,7 +192,7 @@ header {
           font-weight: bold;
           font-size: 0.8rem;
 
-          @include md {
+          @include sm {
             font-size: 1rem;
           }
         }
@@ -210,7 +211,7 @@ header {
 
 .restaurants-listing-section {
   background-color: color(lightG);
-  padding: 5vh 2vh 8vh 2vh;
+  padding: 2rem 0.2rem;
 
   @include md {
     display: flex;
@@ -219,12 +220,12 @@ header {
   }
 
   h2 {
-    width: 90vw;
+    width: 94%;
     margin: 16px auto;
   }
 
   .restaurant-card {
-    width: 90%;
+    width: 94%;
     height: 16rem;
     background-color: white;
     border-radius: 16px;
