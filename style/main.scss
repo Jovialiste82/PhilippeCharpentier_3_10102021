@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
+@import "breakpoints";
+@import "restaurants";
 
 $colors: (
   primary: #9356dc,
@@ -20,7 +22,7 @@ body {
   position: relative;
 
   .loader {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,26 +37,20 @@ body {
     animation-delay: 2.5s;
 
     .spinner {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      height: 8rem;
-      width: 8rem;
-      border: 10px dashed map-get($colors, primary);
-      background-color: transparent;
+      margin: calc(100vh / 2 - 5vh) auto;
+      height: 7rem;
+      width: 7rem;
+      border: 3px solid map-get($colors, lightG);
       border-radius: 50%;
-      animation: RotateSpinner 4s linear infinite;
+      border-top-color: map-get($colors, primary);
+      border-left-color: map-get($colors, primary);
+      border-bottom-color: map-get($colors, secondary);
+      border-right-color: map-get($colors, secondary);
+      animation: RotateSpinner 0.6s linear infinite;
 
       @keyframes RotateSpinner {
-        50% {
-          border: 10px dashed map-get($colors, secondary);
-          transform: translate(-50%, -50%) rotate(180deg);
-        }
-
-        100% {
-          border: 10px dashed map-get($colors, primary);
-          transform: translate(-50%, -50%) rotate(360deg);
+        to {
+          transform: rotate(360deg);
         }
       }
     }
@@ -99,7 +95,11 @@ header {
     border: none;
     color: map-get($colors, darkG2);
     font-weight: bold;
-    font-size: medium;
+    font-size: 0.8rem;
+
+    @include md {
+      font-size: 1.1rem;
+    }
   }
 }
 
@@ -128,9 +128,19 @@ header {
   padding-top: 3vh;
   padding-bottom: 4vh;
 
-  h2 {
-    width: 90vw;
-    margin: 16px auto;
+  .how-to-section-title {
+    width: 80vw;
+    margin-left: 0.4rem;
+
+    h2 {
+      //width: 90vw;
+      width: 40vw;
+      margin: 1rem 1rem 1rem 1.2rem;
+    }
+
+    @include md {
+      margin-left: 5rem;
+    }
   }
 
   .how-to-buttons {
@@ -164,17 +174,21 @@ header {
         }
 
         .how-to-logo {
-          margin: auto 20px;
+          margin: auto 0.5rem;
           color: color(darkG1);
         }
 
         .how-to-text {
           font-weight: bold;
+          font-size: 0.8rem;
+
+          @include md {
+            font-size: 1rem;
+          }
         }
       }
 
       &:hover {
-        // background-color: rgba(147, 86, 220, 0.1);
         background-color: lighten(color(primary), 35%);
 
         .how-to-logo {
@@ -189,18 +203,29 @@ header {
   background-color: color(lightG);
   padding: 5vh 2vh 8vh 2vh;
 
+  @include md {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
   h2 {
     width: 90vw;
     margin: 16px auto;
   }
 
   .restaurant-card {
-    width: 90vw;
-    height: 40vh;
+    width: 90%;
+    height: 16rem;
     background-color: white;
     border-radius: 16px;
     margin: 24px auto;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    @include md {
+      width: 45%;
+      margin: 0.6rem;
+    }
 
     a {
       text-decoration: none;
@@ -221,7 +246,8 @@ header {
 
       h3,
       p {
-        margin: 8px;
+        margin: 0.5rem;
+        font-size: 1rem;
       }
 
       .restaurant-card-text {
@@ -230,13 +256,13 @@ header {
         .heart-logo,
         .heart-logo-hover {
           position: absolute;
-          top: 32px;
-          right: 32px;
+          top: 30%;
+          right: 5%;
           font-size: x-large;
         }
 
         .heart-logo {
-          color: black;
+          color: rgba(0, 0, 0, 0.7);
         }
 
         .heart-logo-hover {

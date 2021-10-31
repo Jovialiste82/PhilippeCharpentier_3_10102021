@@ -28,12 +28,13 @@ header {
   h1 {
     margin: 0;
     padding-top: 2vh;
+    font-size: 1.8rem;
   }
 
   .back-button {
     position: absolute;
     top: 35%;
-    left: 30px;
+    left: 1rem;
 
     a {
       text-decoration: none;
@@ -58,48 +59,67 @@ header {
 
   .container {
     position: relative;
-    padding: 32px 16px;
+    padding: 2rem 1.2rem;
     background-color: color(lightG);
     border-top-left-radius: 32px;
     border-top-right-radius: 32px;
 
-    .heart-logo,
-    .heart-logo-hover {
-      position: absolute;
-      top: 32px;
-      right: 32px;
-      font-size: x-large;
+    @include md {
+      padding: 2rem 8rem;
     }
 
-    .heart-logo {
-      color: black;
+    @include lg {
+      padding: 2rem 12rem;
     }
 
-    .heart-logo-hover {
-      opacity: 0;
-      color: transparent;
-      background: linear-gradient(
-        to right,
-        white 40%,
-        color(secondary) 50%,
-        color(primary) 90%
-      );
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-size: 300%;
-      transition: 500ms ease-in-out;
+    .sub-header {
+      display: flex;
+      justify-content: space-between;
 
-      &:hover {
-        opacity: 1;
-        background-position: right;
+      .sub-header-title {
+        h2 {
+          font-family: "Shrikhand";
+          letter-spacing: 1px;
+          font-size: 1.3rem;
+        }
       }
-    }
 
-    h2 {
-      // width: 90vw;
-      margin: 0 auto;
-      font-family: "Shrikhand";
-      letter-spacing: 1px;
+      .sub-header-heart {
+        position: relative;
+        width: 3rem;
+
+        .heart-logo,
+        .heart-logo-hover {
+          position: absolute;
+          top: 30%;
+          left: 1rem;
+          font-size: 1.2rem;
+        }
+
+        .heart-logo {
+          color: rgba(0, 0, 0, 0.7);
+        }
+
+        .heart-logo-hover {
+          opacity: 0;
+          color: transparent;
+          background: linear-gradient(
+            to right,
+            white 40%,
+            color(secondary) 50%,
+            color(primary) 90%
+          );
+          background-clip: text;
+          -webkit-background-clip: text;
+          background-size: 300%;
+          transition: 500ms ease-in-out;
+
+          &:hover {
+            opacity: 1;
+            background-position: right;
+          }
+        }
+      }
     }
 
     .menu-segment {
@@ -107,11 +127,13 @@ header {
         text-transform: uppercase;
         margin-top: 2em;
         margin-bottom: 0.2em;
+        font-size: 1.1rem;
+        color: rgba(0, 0, 0, 0.6);
       }
 
       .divider-type-1 {
         height: 4px;
-        width: 50px;
+        width: 3rem;
         background-color: color(tertiary);
       }
 
@@ -119,15 +141,25 @@ header {
         display: flex;
         flex-direction: column;
 
+        @include lg {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+
         .menu-item {
           width: 100%;
-          height: 10vh;
+          height: 3.5rem;
           border-radius: 8px;
           background-color: white;
           margin: 2vh auto;
           display: flex;
           box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
           overflow: hidden;
+
+          @include lg {
+            width: 45%;
+            margin: 1rem;
+          }
 
           .menu-item-block-text {
             width: 90%;
@@ -141,10 +173,11 @@ header {
               width: 70%;
               overflow: hidden;
               text-overflow: ellipsis;
+              font-size: 0.8rem;
             }
 
             h4 {
-              font-size: larger;
+              font-size: 1rem;
             }
           }
 
@@ -155,8 +188,10 @@ header {
 
             .menu-item-price {
               position: absolute;
-              bottom: 1em;
+              bottom: 0.7em;
+              right: 0.5em;
               font-weight: 600;
+              font-size: 0.8rem;
             }
           }
 
@@ -172,7 +207,7 @@ header {
             justify-content: center;
 
             .fa-check-circle {
-              font-size: 2rem;
+              font-size: 1rem;
               @keyframes fullrotate {
                 to {
                   transform: rotate(360deg);

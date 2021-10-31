@@ -14,12 +14,13 @@ header {
 header h1 {
   margin: 0;
   padding-top: 2vh;
+  font-size: 1.8rem;
 }
 
 header .back-button {
   position: absolute;
   top: 35%;
-  left: 30px;
+  left: 1rem;
 }
 
 header .back-button a {
@@ -51,19 +52,39 @@ header .back-button a {
   border-top-right-radius: 32px;
 }
 
-.detail-menu .container .heart-logo,
-.detail-menu .container .heart-logo-hover {
+.detail-menu .container .sub-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.detail-menu .container .sub-header .sub-header-title h2 {
+  font-family: "Shrikhand";
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+}
+
+.detail-menu .container .sub-header .sub-header-heart {
+  position: relative;
+  width: 3rem;
+}
+
+.detail-menu .container .sub-header .sub-header-heart .heart-logo,
+.detail-menu .container .sub-header .sub-header-heart .heart-logo-hover {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  font-size: x-large;
+  top: 0;
+  left: 1rem;
+  font-size: 1.2rem;
 }
 
-.detail-menu .container .heart-logo {
-  color: black;
+.detail-menu .container .sub-header .sub-header-heart .heart-logo {
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.detail-menu .container .heart-logo-hover {
+.detail-menu .container .sub-header .sub-header-heart .heart-logo-hover {
   opacity: 0;
   color: transparent;
   background: -webkit-gradient(linear, left top, right top, color-stop(40%, white), color-stop(50%, #ff79da), color-stop(90%, #9356dc));
@@ -75,26 +96,22 @@ header .back-button a {
   transition: 500ms ease-in-out;
 }
 
-.detail-menu .container .heart-logo-hover:hover {
+.detail-menu .container .sub-header .sub-header-heart .heart-logo-hover:hover {
   opacity: 1;
   background-position: right;
-}
-
-.detail-menu .container h2 {
-  margin: 0 auto;
-  font-family: "Shrikhand";
-  letter-spacing: 1px;
 }
 
 .detail-menu .container .menu-segment .menu-segment-title {
   text-transform: uppercase;
   margin-top: 2em;
   margin-bottom: 0.2em;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .detail-menu .container .menu-segment .divider-type-1 {
   height: 4px;
-  width: 50px;
+  width: 3rem;
   background-color: #99e2d0;
 }
 
@@ -110,7 +127,7 @@ header .back-button a {
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item {
   width: 100%;
-  height: 10vh;
+  height: 3.5rem;
   border-radius: 8px;
   background-color: white;
   margin: 2vh auto;
@@ -136,10 +153,11 @@ header .back-button a {
   width: 70%;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 0.8rem;
 }
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-text h4 {
-  font-size: larger;
+  font-size: 1rem;
 }
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-price {
@@ -150,8 +168,10 @@ header .back-button a {
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-price .menu-item-price {
   position: absolute;
-  bottom: 1em;
+  bottom: 0.7em;
+  right: 0.5em;
   font-weight: 600;
+  font-size: 0.8rem;
 }
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-tick {
@@ -173,7 +193,7 @@ header .back-button a {
 }
 
 .detail-menu .container .menu-segment .cards-wrapper .menu-item .menu-item-block-tick .fa-check-circle {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 @-webkit-keyframes fullrotate {
