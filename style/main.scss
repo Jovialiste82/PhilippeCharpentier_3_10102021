@@ -71,11 +71,12 @@ body {
 header {
   font-family: "Shrikhand";
   text-align: center;
-  height: 10vh;
+  height: 2.8rem;
+  padding-bottom: 1rem;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 
   h1 {
     margin: 0;
-    padding-top: 2vh;
   }
 }
 
@@ -176,6 +177,14 @@ header {
         .how-to-logo {
           margin: auto 0.5rem;
           color: color(darkG1);
+
+          @include sm {
+            margin: 1rem;
+          }
+
+          @include md {
+            margin: 1.5rem;
+          }
         }
 
         .how-to-text {

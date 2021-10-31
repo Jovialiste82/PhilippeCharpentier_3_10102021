@@ -410,12 +410,14 @@ body .loader .spinner {
 header {
   font-family: "Shrikhand";
   text-align: center;
-  height: 10vh;
+  height: 2.8rem;
+  padding-bottom: 1rem;
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
 }
 
 header h1 {
   margin: 0;
-  padding-top: 2vh;
 }
 
 .localisation-section {
@@ -526,6 +528,18 @@ header h1 {
 .how-to-section .how-to-buttons .how-to-button .how-to-button-wrapper .how-to-logo {
   margin: auto 0.5rem;
   color: #7e7e7e;
+}
+
+@media (min-width: 480px) {
+  .how-to-section .how-to-buttons .how-to-button .how-to-button-wrapper .how-to-logo {
+    margin: 1rem;
+  }
+}
+
+@media (min-width: 720px) {
+  .how-to-section .how-to-buttons .how-to-button .how-to-button-wrapper .how-to-logo {
+    margin: 1.5rem;
+  }
 }
 
 .how-to-section .how-to-buttons .how-to-button .how-to-button-wrapper .how-to-text {
