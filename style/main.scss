@@ -240,10 +240,23 @@ header {
     a {
       text-decoration: none;
       color: black;
+      position: relative;
 
       .restaurant-card-image {
         height: 70%;
         width: 100%;
+        position: relative;
+
+        .newbox {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          color: rgb(9, 141, 108);
+          background-color: rgb(153, 226, 208);
+          padding: 0.4rem 0.8rem;
+          font-weight: 700;
+          border-radius: 2px;
+        }
 
         img {
           height: 100%;

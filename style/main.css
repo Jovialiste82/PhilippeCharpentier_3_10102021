@@ -211,7 +211,7 @@ header .back-button a {
   color: white;
   font-size: larger;
   background-color: #99e2d0;
-  margin-right: -500px;
+  margin-right: -20%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,11 +606,24 @@ header h1 {
 .restaurants-listing-section .restaurant-card a {
   text-decoration: none;
   color: black;
+  position: relative;
 }
 
 .restaurants-listing-section .restaurant-card a .restaurant-card-image {
   height: 70%;
   width: 100%;
+  position: relative;
+}
+
+.restaurants-listing-section .restaurant-card a .restaurant-card-image .newbox {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: #098d6c;
+  background-color: #99e2d0;
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
+  border-radius: 2px;
 }
 
 .restaurants-listing-section .restaurant-card a .restaurant-card-image img {
